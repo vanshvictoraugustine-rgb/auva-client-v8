@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "dev.auva.client.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "GuiMixin",
+    "ContainerSlotMixin",
+    "CameraMixin",
+    "MouseHandlerMixin",
+    "KeyboardInputMixin",
+    "LivingEntityRendererMixin",
+    "CameraEffectsMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

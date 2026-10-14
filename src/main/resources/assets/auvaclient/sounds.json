@@ -1,0 +1,52 @@
+{
+  "boing": {
+    "sounds": [
+      "auvaclient:boing"
+    ]
+  },
+  "bonk": {
+    "sounds": [
+      "auvaclient:bonk"
+    ]
+  },
+  "cartoon_punch": {
+    "sounds": [
+      "auvaclient:cartoon_punch"
+    ]
+  },
+  "duck": {
+    "sounds": [
+      "auvaclient:duck"
+    ]
+  },
+  "goofy_bark": {
+    "sounds": [
+      "auvaclient:goofy_bark"
+    ]
+  },
+  "laser": {
+    "sounds": [
+      "auvaclient:laser"
+    ]
+  },
+  "pipe": {
+    "sounds": [
+      "auvaclient:pipe"
+    ]
+  },
+  "retro": {
+    "sounds": [
+      "auvaclient:retro"
+    ]
+  },
+  "squeak": {
+    "sounds": [
+      "auvaclient:squeak"
+    ]
+  },
+  "tiny_woof": {
+    "sounds": [
+      "auvaclient:tiny_woof"
+    ]
+  }
+}

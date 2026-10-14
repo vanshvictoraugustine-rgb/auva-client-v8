@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "auvaclient",
+  "version": "${version}",
+  "name": "Auva Client",
+  "description": "Auva Client is a sleek, next-generation PvP & utility client featuring a high-contrast neon magenta and purple interface, real-time cross-player badge synchronization, advanced performance boosters, and fully customizable HUD modules.",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.auva.client.AuvaClient"
+    ],
+    "main": [
+      "dev.auva.client.AuvaSounds"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "mixins": [
+    "auvaclient.mixins.json"
+  ],
+  "icon": "assets/auvaclient/icon.png",
+  "authors": [
+    "AuvaPlays"
+  ]
+}

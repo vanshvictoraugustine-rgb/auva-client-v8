@@ -1,0 +1,186 @@
+================================================================================
+                        AUVA CLIENT - DESIGN SPECIFICATION
+================================================================================
+Theme Identity: Dark Sleek UI with Vibrant Purple & Magenta Accents
+Inspired by: Lunar Client (clean, polished HUD overlays and structured GUI modals)
+Target Aesthetics: Modern, clean typography, soft rounded borders, translucent panels
+
+================================================================================
+1. GLOBAL COLOR PALETTE & DESIGN SYSTEM
+================================================================================
+- Primary Background Overlay : #0D0814 (85% Opacity / RGBA: 13, 8, 20, 0.85)
+- Secondary Panel Background : #160D23 (90% Opacity / RGBA: 22, 13, 35, 0.90)
+- Accent Gradient Primary    : #D946EF (Vibrant Magenta)
+- Accent Gradient Secondary  : #8B5CF6 (Deep Violet / Purple)
+- Active Toggle / Highlight  : #C084FC (Bright Lilac / Light Purple)
+- Text Primary (Headers)    : #FFFFFF (Pure White)
+- Text Secondary (Muted)    : #A78BFA (Soft Purple Gray)
+- Text Inactive             : #6B7280 (Cool Gray)
+- Border Stroke / Outline   : #2E1A47 (1px Solid Border with subtle 2px corner radius)
+
+================================================================================
+2. CLIENT MAIN MENUS & MODULE MANAGEMENT GUIS
+================================================================================
+
+[Module GUI - Main Mods Menu]
+- Layout: Centered modal window (800x500px aspect ratio) floating over a blurred game background.
+- Header: Left-aligned logo "AUVA" with a gradient text effect (Magenta to Purple) and a "CLIENT v1.0" badge in small lilac font. Search bar on top right with a magnifying glass icon.
+- Navigation Sidebar (Left): Vertical tabs with smooth hover transitions:
+  * Categories: [All Mods] [Combat] [Movement] [Render] [HUD Elements] [Utility]
+- Main Grid Area (Right): 3x3 grid of Mod Cards.
+- Mod Card Styling: Dark purple panel (#160D23) with rounded corners (4px radius).
+  * Contains mod icon, title (White), brief description (Soft Purple Gray), and a custom toggle switch.
+  * Active Switch: Magenta glow (#D946EF) slider aligned to the right.
+  * Inactive Switch: Dark gray border with dark purple fill.
+  * Gear Icon on the top right of each card opens [Module Settings].
+
+[Module Settings GUI]
+- Layout: Opens as a sliding modal overlay over the Module GUI or direct keybind popup.
+- Navigation: Top bar with mod name in bold white text and a Back arrow button (`<- Mods`).
+- Settings List: Vertical scrollable pane containing:
+  * Sliders: Soft purple bar background, active track filled with Magenta-to-Purple gradient, circular drag handle with white outline.
+  * Color Pickers: Interactive RGBA spectrum box with hex input field and transparency slider.
+  * Toggles: Clean switch buttons for boolean options.
+  * Dropdowns: Dark popup menu listing available modes/fonts with highlighted selected item.
+
+[HUD Editor]
+- Behavior: Triggered by Right-Shift or HUD keybind. Dims background slightly (40% black tint).
+- Interaction: All enabled HUD modules reveal a dashed purple bounding box outline with small corner handles for resizing.
+- Hover Effect: Hovering over a widget turns the outline to solid Magenta and shows dynamic coordinates (`X: 120, Y: 40`).
+- Control Bar: A floating toolbar at the top center containing:
+  * [Grid Snap Toggle] [Reset Layout] [Clear All] [Save & Exit]
+- Drag and Drop: Modules snap smoothly to center axes or nearby module edges when near alignment.
+
+[Main Menu GUI]
+- Background: Dynamic panorama or custom animated dark space background with floating purple particle effects.
+- Logo Area: Prominent "AUVA CLIENT" title located centered-top with dynamic RGB gradient shine.
+- Main Action Buttons: Centered vertical column or sleek bottom toolbar:
+  * [Singleplayer] [Multiplayer] [Auva Settings] [Cosmetics] [Quit Game]
+- Button Styling: Wide rounded buttons with semi-transparent dark background (#0D0814). On hover, fill shifts to deep violet (#8B5CF6) with a subtle magenta glow outline.
+- Bottom Corner Widgets: Active account avatar & username on bottom-left; Client version & news ticker on bottom-right.
+
+[Resource Pack Browser]
+- Layout: Two-column layout (Available Packs vs. Active Packs).
+- Cards: Pack icon preview on the left, pack title & version info on the right.
+- Actions: Hovering shows arrow overlay to move packs between lists without needing default Minecraft pack arrow clutter.
+
+[Music Player]
+- Layout: Compact floating widget (300x120px) styled like a sleek media player.
+- Visuals: Album art thumbnail, song title scrolling text, playback progress bar (Magenta gradient fill), and transport controls (Play, Pause, Skip, Volume Slider).
+
+[Account Manager / IAS GUI]
+- Layout: Vertical table list showing logged-in accounts.
+- Features: Avatar head icon, account type badge (Microsoft/Offline), active tag ("USING"), and quick "Add Account" button at the bottom.
+
+[Profiles / Configs GUI]
+- Layout: Card grid or vertical list showcasing custom user profiles (e.g., "PvP Layout", "Survival HUD", "Cinematic").
+- Actions: [Create New], [Import Code], [Export], and [Apply]. Highlighted card shows active configuration in bright purple fill.
+
+[Keybind Manager]
+- Layout: Searchable table grid listing [Category] | [Action / Mod Name] | [Keybind Button].
+- Interaction: Clicking a keybind button flashes magenta ("Press any key...") until a new key is registered.
+
+[Recorder GUI / Replay Editor]
+- Layout: Timeline axis along the bottom with frame markers, playhead scrubber line in Magenta, keyframe position dots in bright purple, and top toolbar for rendering controls.
+
+[Screenshot Manager]
+- Layout: Grid gallery showing captured game screenshots with hover buttons: [Copy Image], [Open Folder], [Delete], [Upload].
+
+[Notifications]
+- Layout: Small toast messages popping up from the bottom-right or top-right corner.
+- Styling: Translucent dark card with a vertical left accent border (Magenta for alerts, Purple for info) and white text.
+
+================================================================================
+3. HUD & ON-SCREEN DISPLAY WIDGETS
+================================================================================
+
+[Keystrokes Mod]
+- Layout: Traditional WASD + Mouse buttons block arrangement.
+- Styling: Dark translucent squares for W, A, S, D, LMB, RMB, and Spacebar.
+- Active Press: Pressed keys light up in solid Magenta (#D946EF) with smooth fade-out animation upon release. Text inside keys turns white.
+- Secondary Info: CPS display integrated directly inside the LMB and RMB boxes.
+
+[Armor HUD / Armor Status]
+- Layout: Vertical or horizontal stack of equipped armor icons (Helmet down to Boots) plus main/offhand items.
+- Visuals: Render 3D item models next to durability bars. Durability text turns red when low (<20%), yellow when medium, and soft purple/white when high.
+
+[Scoreboard]
+- Layout: Clean sidebar panel with background shadow toggle.
+- Features: Option to strip server numbers on the right side, hide red numbers, change title bar color to Auva Magenta gradient, and dynamic text shadow adjustments.
+
+[Potion Effects HUD]
+- Layout: Compact stack showing active status icons, effect name, tier (e.g., "Speed II"), and ticking countdown timer. Compact mode shows icons only with a radial timer overlay.
+
+[FPS HUD / CPS HUD / Ping HUD / Combo Counter]
+- Styling: Minimalist text widgets. Format options: `FPS: 240` or `[240 FPS]`.
+- Customization: Custom font options, text shadow toggles, bracket styling, and Auva accent color highlights on values.
+
+[Coordinates HUD]
+- Layout: Multi-line clean widget showing:
+  * `X: 1240  Y: 64  Z: -820`
+  * `Direction: North (Yaw: -180)`
+  * `Biome: Plains`
+
+[Direction HUD / Compass Bar]
+- Layout: Sleek horizontal compass tick bar across top-center of the screen.
+- Visuals: Cardinal markers (`N`, `E`, `S`, `W`) in bold white, degree numbers underneath, center indicator marked with a subtle magenta arrowhead.
+
+[Inventory HUD]
+- Layout: 3x9 grid render of player inventory contents styled as a dark semi-transparent container on screen with subtle purple borders around items.
+
+[Totem Counter & Durability HUD]
+- Layout: Compact item icon displaying total count overlay in bottom right corner (e.g., Totem Icon + `x12`). Durability displays held item health bar with numeric fraction (`1500 / 1561`).
+
+================================================================================
+4. VISUAL & CAMERA TWEAKS
+================================================================================
+
+[Custom Crosshair]
+- Options: Custom gap, size, stroke thickness, color picker (Magenta default), dynamic spread when moving/shooting, and hit-color reactivity (flashes red or custom color on hit).
+
+[Hit Color]
+- Function: Overrides standard red flash when hitting entities. Set RGB color (e.g., vibrant purple `#8B5CF6`) with custom opacity slider.
+
+[Block Overlay]
+- Function: Custom outlines around targeted blocks.
+- Styles: [Outline Only], [Filled Box], or [Both]. Color set to Auva Magenta line with 20% opacity fill.
+
+[Motion Blur / HurtCam / Zoom]
+- Motion Blur: Shader-based motion vector blur slider (0% to 100%).
+- HurtCam: Slider scale to decrease camera tilt intensity when receiving damage (0 = fully disabled).
+- Zoom: Smooth FOV transition triggered by keybind, with optional mouse scroll wheel FOV adjustments.
+
+[Freelook & Freecam]
+- Freelook: Unlocks 3rd person perspective camera while player model continues moving straight. Shows small indicator on HUD: `[Freelook Active]`.
+- Freecam: Spectator-style camera detachment while original body stays in place. Includes speed control sliders in settings.
+
+[Fullbright / Time Changer / Weather Changer]
+- Fullbright: Multiplies gamma lighting without light-map glitches.
+- Time / Weather Changer: Client-side override sliders for custom visual time cycles and weather locking.
+
+================================================================================
+5. GAMEPLAY, PVP & PERFORMANCE ENHANCERS
+================================================================================
+
+[Hit Sounds]
+- Customization: Sound triggers on successful damage ticks. Sound options: Pop, Bubble, Metallic, Skeet, Custom Sound File (.wav/.ogg upload).
+
+[Item Highlighter]
+- Function: Renders colored glow outlines or background tiles around specific target items in inventory grids or dropped items in the world.
+
+[AppleSkin / Food HUD]
+- Visuals: Renders dynamic golden food icons representing saturation levels over the vanilla hunger bar, and flashing preview when holding edible items.
+
+[Toggle Sprint / Toggle Sneak]
+- On-Screen Text: Clean text overlay (`[Sprinting (Toggled)]` / `[Sneaking (Toggled)]`) with custom placement and color customization.
+
+[FPS Booster / Performance]
+- Settings Panel: Performance switches for entity culling, fast math, particle toggles, tile entity rendering distance, and Sodium/Rubidium graphics settings integration.
+
+[Tier Tagger / Name Hider]
+- Tier Tagger: Custom text tag next to usernames showing competitive ranks (e.g., `[HT1] Username`).
+- Name Hider: Replaces self player name in all rendered strings, scoreboard, and chat with custom configured alias (e.g., "Auva Player").
+
+[Crystal Optimizer / Anchor Optimizer]
+- Functionality: Optimizes client packet timing visualization and block break animations for fast-paced Nether Crystal and Respawn Anchor PvP interaction.
+================================================================================

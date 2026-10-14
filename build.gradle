@@ -1,0 +1,14 @@
+plugins { id 'net.fabricmc.fabric-loom-remap' version '1.17.13' }
+version = '0.8.0-dev'
+group = 'dev.auva'
+base { archivesName = 'auva-client' }
+repositories { mavenCentral() }
+dependencies {
+ minecraft 'com.mojang:minecraft:1.21.11'
+ mappings loom.officialMojangMappings()
+ modImplementation 'net.fabricmc:fabric-loader:0.19.3'
+ modImplementation 'net.fabricmc.fabric-api:fabric-api:0.141.6+1.21.11'
+}
+processResources { inputs.property 'version', project.version; filesMatching('fabric.mod.json') { expand version: project.version } }
+tasks.withType(JavaCompile).configureEach { options.release = 21 }
+java { sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }
